@@ -1,8 +1,7 @@
-package ars.example.hisab
+package ars.example.hisab.Model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.io.Serializable
 
 @Entity(tableName = "MyDataBase")
 data class entitiy(

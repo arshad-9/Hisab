@@ -1,15 +1,12 @@
-package ars.example.hisab
+package ars.example.hisab.View
 
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import ars.example.hisab.Model.entitiy
 import ars.example.hisab.databinding.PayableiItemCardBinding
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 
 class paymentAdaptor( val content:Context, val  mylist :List<entitiy>):RecyclerView.Adapter<paymentAdaptor.viewHolder>() {
     inner  class viewHolder(val binding :PayableiItemCardBinding):ViewHolder(binding.root){}

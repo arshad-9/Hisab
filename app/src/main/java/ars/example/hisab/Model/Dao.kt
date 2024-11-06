@@ -1,4 +1,4 @@
-package ars.example.hisab
+package ars.example.hisab.Model
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 interface Dao {
 
     @Insert
-    suspend fun insert(obj:entitiy)
+    suspend fun insert(obj: entitiy)
 
     @Delete
     suspend fun delete(entitiy: entitiy)

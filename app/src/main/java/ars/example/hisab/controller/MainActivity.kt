@@ -1,8 +1,7 @@
-package ars.example.hisab
+package ars.example.hisab.controller
 
 import android.app.Dialog
 import android.content.Intent
-import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -12,19 +11,16 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.Toast
-import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import ars.example.hisab.Model.Dao
+import ars.example.hisab.R
+import ars.example.hisab.RoomApp
+import ars.example.hisab.View.adaptor
 import ars.example.hisab.databinding.ActivityMainBinding
 import ars.example.hisab.databinding.AddItemBinding
-import ars.example.hisab.databinding.AreYouSureBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.flow.collect
+import ars.example.hisab.Model.entitiy
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -33,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     private var binding : ActivityMainBinding?= null
 
-    private var daao :Dao?= null
+    private var daao : Dao?= null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,7 +66,7 @@ class MainActivity : AppCompatActivity() {
             daao!!.delete(xc)
         }
     }
-    private fun mInsert(name:entitiy){
+    private fun mInsert(name: entitiy){
         if(name.Total>0) {
             lifecycleScope.launch {
                 daao?.update(
@@ -121,8 +117,10 @@ class MainActivity : AppCompatActivity() {
 
 
                 Log.i("tagOut",newTotal.toString())
-                daao?.update(entitiy(id=id,Total =newTotal,
-                    Status = status, ItemName = name, Units = it.Units, Amount_PerUnit = y, Date = date))
+                daao?.update(
+                    entitiy(id=id,Total =newTotal,
+                    Status = status, ItemName = name, Units = it.Units, Amount_PerUnit = y, Date = date)
+                )
                  }
 
 
@@ -163,7 +161,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId)
         {
-            R.id.history->{
+            R.id.history ->{
                 val intent = Intent(this, PaymentActivity::class.java)
                 startActivity(intent)
 

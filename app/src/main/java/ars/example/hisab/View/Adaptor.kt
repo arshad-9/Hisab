@@ -1,24 +1,26 @@
-package ars.example.hisab
+package ars.example.hisab.View
 
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.opengl.Visibility
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import ars.example.hisab.Model.entitiy
 import ars.example.hisab.databinding.AreYouSureBinding
 import ars.example.hisab.databinding.ItemLayoutBinding
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class adaptor( val itemList:List<entitiy>, val context:Context ,val update :(id:Int,unit:Double?)->Unit,val minsert:(ItemName:entitiy)->Unit,
-     val delete :(id:Int)->Unit):RecyclerView.Adapter<adaptor.viewHolder>() {
+class adaptor(val itemList:List<entitiy>, val context:Context,
+              val update :(id:Int, unit:Double?)->Unit,
+              val minsert:(ItemName: entitiy)->Unit,
+              val delete :(id:Int)->Unit):RecyclerView.Adapter<adaptor.viewHolder>() {
     inner class viewHolder(val binding:ItemLayoutBinding) : ViewHolder(binding.root){}
 
 
@@ -85,7 +87,7 @@ private fun showPaymentDialog(entitiy: entitiy)
 
     private fun showpopUp(s: Int)
     {
-        val bind  = AreYouSureBinding.inflate(LayoutInflater.from(context))
+       val bind  = AreYouSureBinding.inflate(LayoutInflater.from(context))
        val dialog = Dialog(context)
         dialog.setContentView(bind.root)
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
