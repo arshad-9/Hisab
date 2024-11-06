@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Hisab" parent="Theme.Material3.DayNight.NoActionBar">
+       <item name="colorPrimary">#66FF00</item>
+        <item name="colorPrimaryDark">#17B169</item>
+        <item name="colorAccent">#17B169</item>
+        <item name="colorPrimaryVariant">#32de84</item>
+    </style>
+
+    <style name="Theme.Hisab" parent="Base.Theme.Hisab" >
+        <item name="colorPrimary">#66FF00</item>
+    </style>
+</resources>

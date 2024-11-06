@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Hisab</string>
+    <string name="addItem">ADD NEW ITEM</string>
+    <string name="Done">DONE</string>
+    <string name="GET">Did you get</string>
+    <string name="Rs">Pay \u20B9</string>
+</resources>
